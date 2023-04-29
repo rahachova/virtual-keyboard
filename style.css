@@ -1,0 +1,72 @@
+.keyboard {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  width: 530px
+}
+
+.textarea {
+  width: 300px;
+  height: 100px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+.button {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(150, 233, 230);
+  color: black;
+  height: 30px;
+  width: 30px;
+  border-radius: 3px;
+  font-size: 13px;
+  transition: all 0.1s;
+}
+
+.button__additional {
+  position: absolute;
+  left: 3px;
+  top: 0;
+
+}
+
+/* .button__main {
+  
+} */
+
+.button--pink {
+  background-color: rgb(255, 183, 233);
+  color: rgb(40, 40, 40);
+}
+
+.button--small {
+  width: 33px;
+}
+
+.button--medium {
+  width: 45px;
+}
+
+.button--large {
+  width: 65px;
+}
+
+.button--exstra-large {
+  width: 71px;
+}
+
+.button--space {
+  width: 216px;
+}
+
+.button--active {
+  background-color: rgb(48, 112, 249);
+  transform: scale(0.9);
+}
