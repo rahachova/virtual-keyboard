@@ -1,3 +1,4 @@
+let language = 'en'
 
 const arrayOfButtons = [
   {main: '`', additional: '~', mainRu: 'Ё', code: "Backquote"},
@@ -42,7 +43,7 @@ const arrayOfButtons = [
   {main: ";", mainRu: "Ж", code: "Semicolon"},
   {main: "'", mainRu: "Э", code: "Quote"},
   {main: "Enter", alternativeColor: true, size: 'l', code: "Enter"},
-  {main: "Shift", alternativeColor: true, size: 'xl', code: "ShiftRight"},
+  {main: "Shift", alternativeColor: true, size: 'xl', code: "ShiftLeft"},
   {main: "\/", code: "SlashFirst"},
   {main: "Z", mainRu: "Я", code: "KeyZ"},
   {main: "X", mainRu: "Ч", code: "KeyX"},
@@ -73,7 +74,7 @@ function createKeyBoard() {
   return keyboard
 }
 
-function createButton({main, additional, alternativeColor, size, code}) {
+function createButton({main, additional, alternativeColor, size, code, mainRu, additionalRu}) {
   const button = document.createElement('div')
   let className = 'button'
   if(alternativeColor) {
@@ -101,10 +102,10 @@ function createButton({main, additional, alternativeColor, size, code}) {
   button.className = className
   button.id = code
   const additionalSymbol = document.createElement('div')
-  additionalSymbol.textContent = additional
+  additionalSymbol.textContent = (language === "ru" && additionalRu) ? additionalRu : additional
   additionalSymbol.className = 'button__additional'
   const mainSymbol = document.createElement('div')
-  mainSymbol.textContent = main
+  mainSymbol.textContent = (language === "ru" && mainRu) ? mainRu : main
   mainSymbol.className = 'button__main'
   button.append(additionalSymbol, mainSymbol)
   return button
@@ -121,15 +122,21 @@ body.appendChild(createTextArea())
 const keyboard = createKeyBoard()
 const buttons = arrayOfButtons.map(createButton)
 keyboard.append(...buttons)
-// keyboard.addEventListener()
 body.appendChild(keyboard)
 
-document.addEventListener('keypress', (e) => {
+document.addEventListener('keydown', (e) => {
   setActiveButton(e)
 })
 
 document.addEventListener('keyup', (e) => {
   removeActiveButton(e)
+})
+
+document.addEventListener('keyup', (e) => {
+  if((e.key === 'Shift' && e.altKey) || (e.key === ('Alt' || 'AltGraph') && e.shiftKey)) {
+    language = (language === 'en') ? 'ru' : 'en'
+    changeLanguage()
+  }
 })
 
 function setActiveButton(e) {
@@ -138,4 +145,11 @@ function setActiveButton(e) {
 
 function removeActiveButton(e) {
   document.getElementById(e.code).classList.remove('button--active')
+}
+
+function changeLanguage() {
+  arrayOfButtons.forEach((item, index) => {
+    buttons[index].children[0].textContent = (language === "ru" && item.additionalRu) ? item.additionalRu : item.additional
+    buttons[index].children[1].textContent = (language === "ru" && item.mainRu) ? item.mainRu : item.main
+  })
 }
