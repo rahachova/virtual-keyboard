@@ -64,10 +64,10 @@ const arrayOfButtons = [
     main: 'P', mainLower: 'p', mainRu: 'З', mainRuLower: 'з', code: 'KeyP',
   },
   {
-    main: '[', additional: '{', mainRu: 'Х', mainRuLower: 'х', code: 'BracketLeft',
+    mainLower: '[', main: '{', mainRu: 'Х', mainRuLower: 'х', code: 'BracketLeft',
   },
   {
-    main: ']', additional: '}', mainRu: 'Ъ', mainRuLower: 'ъ', code: 'BracketRight',
+    mainLower: ']', main: '}', mainRu: 'Ъ', mainRuLower: 'ъ', code: 'BracketRight',
   },
   {
     main: '\\', additional: '|', additionalRu: '/', code: 'Backslash',
@@ -118,34 +118,34 @@ const arrayOfButtons = [
     main: 'Shift', altColor: true, size: 'xxl', code: 'ShiftLeft', data: 'shift',
   },
   {
-    main: 'Z', mainLower: 'q', mainRu: 'Я', mainRuLower: 'я', code: 'KeyZ',
+    main: 'Z', mainLower: 'z', mainRu: 'Я', mainRuLower: 'я', code: 'KeyZ',
   },
   {
-    main: 'X', mainLower: 'q', mainRu: 'Ч', mainRuLower: 'ч', code: 'KeyX',
+    main: 'X', mainLower: 'x', mainRu: 'Ч', mainRuLower: 'ч', code: 'KeyX',
   },
   {
-    main: 'C', mainLower: 'q', mainRu: 'С', mainRuLower: 'с', code: 'KeyC',
+    main: 'C', mainLower: 'c', mainRu: 'С', mainRuLower: 'с', code: 'KeyC',
   },
   {
-    main: 'V', mainLower: 'q', mainRu: 'М', mainRuLower: 'м', code: 'KeyV',
+    main: 'V', mainLower: 'v', mainRu: 'М', mainRuLower: 'м', code: 'KeyV',
   },
   {
-    main: 'B', mainLower: 'q', mainRu: 'И', mainRuLower: 'и', code: 'KeyB',
+    main: 'B', mainLower: 'b', mainRu: 'И', mainRuLower: 'и', code: 'KeyB',
   },
   {
-    main: 'N', mainLower: 'q', mainRu: 'Т', mainRuLower: 'т', code: 'KeyN',
+    main: 'N', mainLower: 'n', mainRu: 'Т', mainRuLower: 'т', code: 'KeyN',
   },
   {
-    main: 'M', mainLower: 'q', mainRu: 'Ь', mainRuLower: 'ь', code: 'KeyM',
+    main: 'M', mainLower: 'm', mainRu: 'Ь', mainRuLower: 'ь', code: 'KeyM',
   },
   {
-    main: ',', mainLower: 'q', mainRu: 'Б', mainRuLower: 'б', code: 'Comma',
+    main: '<', mainLower: ',', mainRu: 'Б', mainRuLower: 'б', code: 'Comma',
   },
   {
-    main: '.', mainLower: 'q', mainRu: 'Ю', mainRuLower: 'ю', code: 'Period',
+    main: '>', mainLower: '.', mainRu: 'Ю', mainRuLower: 'ю', code: 'Period',
   },
   {
-    main: '/', mainLower: 'q', mainRu: ',', mainRuLower: '.', code: 'SlashSecond',
+    main: '?', mainLower: '/', mainRu: ',', mainRuLower: '.', code: 'SlashSecond',
   },
   { main: '\u2191', altColor: true, code: 'ArrowUp' },
   {
